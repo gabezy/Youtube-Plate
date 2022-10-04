@@ -1,0 +1,174 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+
+/**********************************/
+/* 0. Variables
+/**********************************/
+
+:root {
+    --plaque-shadow: .4rem .4rem 1.8rem #7e7e7e, -.4rem -.4rem 2rem #f8f8f8;
+	--plaque-background: linear-gradient(to bottom, #adafb3 50%, #c7c7c9 80%);
+	
+	--btn-shadow: inset .6rem .6rem .9rem #484541, inset -.4rem -.4rem 1.4rem #5c5c58;
+    --btn-filter: drop-shadow(.1rem .2rem .5rem #424242);
+
+	--clr-description: #edeff2;
+	--clr-btn: #868681;
+	--clr-btn-play: #D6D6D6;
+	--clr-youtube-red: #c00;
+	--clr-youtube-white: #fff;
+
+	--ff: "Gothic A1", sans-serif;
+}
+
+/**********************************/
+/* 1. General styles
+/**********************************/
+html {
+	font-size: 62.5%;
+}
+
+
+body {
+	background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png');
+	font-family: var(--ff);
+}
+/**********************************/
+/* 2. Plaque
+/**********************************/
+
+.plaque {
+	position: relative;
+	width: 43rem;
+	height: 55rem;
+	background: var(--plaque-background);
+	margin: 0 auto;
+	margin-top: 5rem;
+	box-shadow: var(--plaque-shadow);
+	display: flex;
+	justify-content: center; /* Alings horizontally the items inside the flex object*/
+}
+
+
+
+/**********************************/
+/* 3. Button
+/**********************************/
+
+.button {
+	width: 19rem;
+	height: 13rem;
+	background: var(--clr-btn);
+	box-shadow: var(--btn-shadow);
+	opacity: .7;
+	border-radius: 2.5rem;
+	position: relative;
+	top: 10rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.button__play {
+	width: 0;
+	height: 0;
+	border-top: 3rem solid transparent;
+	border-bottom: 3rem solid transparent;
+	border-left: 5rem solid var(--clr-btn-play);
+	position: relative;
+	left: 5px;
+	filter: var(--btn-filter);
+}
+.button--broken {
+	overflow: hidden;
+	width: 9.5rem;
+	border-radius: 0;
+}
+
+.button--left-broken {
+	border-top-left-radius: 2.5rem;
+	border-bottom-left-radius: 2.5rem;
+}
+.button--right-broken {
+	border-top-right-radius: 2.5rem;
+	border-bottom-right-radius: 2.5rem;
+	top: 12rem;
+}
+
+.button__play--left-broken {
+	left: 5rem;
+}
+.button__play--right-broken {
+	left: -5rem;
+}
+.button--hide {
+	display: none;
+}
+
+/**********************************/
+/* 4. Description
+/**********************************/
+
+.description {
+	color: var(--clr-description);
+	text-align: center;
+	position: absolute;
+	top: 35rem;
+
+}
+.description__intro {
+	font-size: 1.5rem;
+	margin-bottom: 5px;
+}
+.description__channel-name {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.description__achivement {
+	font-size: 1.8rem;
+	padding: 5px 0;
+}
+.logo {
+	margin-top: 2rem;
+	font-size: 4rem;
+}
+.logo__text {
+	font-weight: bold;
+	letter-spacing: -0.05;
+}
+
+/**********************************/
+/* 5. Form
+/**********************************/
+
+.channel-name {
+	width: 43rem;
+	margin: 5rem auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: var(--clr-youtube-red);
+	border: 1px solid black;
+}
+.channel-name__input {
+	border: 1rem solid var(--clr-youtube-red);
+	width: 100%;
+	height: 5rem;
+	font-style: italic;
+}
+.channel-name__submit {
+	width: 100%;
+	font-size: 3rem;
+	background: var(--clr-youtube-red);
+	border: 0;
+	color: var(--clr-youtube-white);
+	text-transform: uppercase;
+	cursor: pointer;
+	margin: 10px 0;
+	text-align: center;
+}
+
